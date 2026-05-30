@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliqby Agency Blog | E-Commerce Strategy & Insights</title>
+  <meta name="description" content="Read expert articles on e-commerce, Amazon PPC scaling, ACOS vs TACoS, and A10 search engine algorithm optimization.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Blog modal reader styling */
+    .blog-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(8, 11, 17, 0.96);
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .blog-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .blog-modal-content {
+      background: var(--bg-slate);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 800px;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 3.5rem;
+      position: relative;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.8);
+      transform: translateY(30px);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .blog-modal.active .blog-modal-content {
+      transform: translateY(0);
+    }
+    .blog-modal-close {
+      position: sticky;
+      top: -1.5rem;
+      float: right;
+      background: rgba(15, 20, 32, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      margin-top: -1.5rem;
+    }
+    .blog-modal-close:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .article-body p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .article-body h2 {
+      font-size: 1.6rem;
+      color: #FFF;
+      margin: 2.2rem 0 1rem 0;
+    }
+    .article-body ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: var(--text-secondary);
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+    }
+  </style>
+  <!-- JSON-LD Structured Data Schema Markup for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cliqby",
+    "image": "https://punitsirse.wixsite.com/lumen-ads",
+    "@id": "https://punitsirse.wixsite.com/lumen-ads",
+    "url": "https://punitsirse.wixsite.com/lumen-ads",
+    "telephone": "+91 1169266141",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pune Headquarters",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 18.5204,
+      "longitude": 73.8567
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Background Mesh Gradients -->
+  <div class="mesh-bg"></div>
+
+  <!-- Header Nav -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        Cliqby
+      </a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="consultation.html" class="nav-link">Consultation</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <a href="consultation.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Schedule Consult</a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Header -->
+  <section class="section-padding" style="padding-top: 9.5rem; padding-bottom: 3.5rem;">
+    <div class="container" style="text-align: center;">
+      <span class="section-tag reveal">Industry Insights</span>
+      <h1 class="reveal" style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, #FFF 30%, #A5B4FC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        The Cliqby Blog
+      </h1>
+      <p class="reveal" style="color: var(--text-secondary); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        Deep-dives into Amazon algorithms, listing conversions, and modern PPC strategies to scale your e-commerce brand.
+      </p>
+    </div>
+  </section>
+
+  <!-- Blog List Grid -->
+  <section class="section-padding" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="grid-2" style="align-items: stretch;">
+        
+        <!-- Blog 1 -->
+        <div class="card reveal" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between;" onclick="openArticle('acos-myth')">
+          <div class="card-content">
+            <div style="display: flex; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.2rem;">
+              <span><i class="fa-solid fa-user"></i> Punit Sirse</span>
+              <span>&bull;</span>
+              <span><i class="fa-solid fa-calendar-days"></i> Jul 22, 2025</span>
+              <span>&bull;</span>
+              <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+            </div>
+            
+            <h2 style="font-size: 1.6rem; color: #FFF; margin-bottom: 1rem; line-height: 1.3;">
+              The Myth of Low ACOS: Why a Higher Advertising Cost Can Still Be Profitable
+            </h2>
+            
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              In the world of Amazon PPC (Pay-Per-Click) advertising, ACOS (Advertising Cost of Sale) is often treated as the ultimate measure of campaign efficiency. Many sellers believe a lower ACOS is always better, but this mindset can actually stifle your brand's growth...
+            </p>
+          </div>
+          
+          <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Full Article</span>
+            <i class="fa-solid fa-arrow-right" style="color: var(--primary);"></i>
+          </div>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="card reveal" style="cursor: pointer; display: flex; flex-direction: column; justify-content: space-between;" onclick="openArticle('a10-blueprint')">
+          <div class="card-content">
+            <div style="display: flex; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.2rem;">
+              <span><i class="fa-solid fa-user"></i> Punit Sirse</span>
+              <span>&bull;</span>
+              <span><i class="fa-solid fa-calendar-days"></i> Mar 30, 2025</span>
+              <span>&bull;</span>
+              <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+            </div>
+            
+            <h2 style="font-size: 1.6rem; color: #FFF; margin-bottom: 1rem; line-height: 1.3;">
+              Mastering Amazon’s A10 Algorithm: A Seller’s Blueprint for SEO Optimization in 2025
+            </h2>
+            
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Amazon's transition from the legacy A9 search algorithm to the highly sophisticated A10 has fundamentally shifted the rules of marketplace SEO. Discover how to adapt your organic strategies to master catalog rankings and conversions...
+            </p>
+          </div>
+          
+          <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.2rem; display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: var(--primary); font-weight: 600; font-size: 0.9rem;">Read Full Article</span>
+            <i class="fa-solid fa-arrow-right" style="color: var(--primary);"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Article 1 Modal Reader -->
+  <div id="acos-myth" class="blog-modal" onclick="closeArticle(event, 'acos-myth')">
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closeModalDirect('acos-myth')">&times;</button>
+      
+      <div style="display: flex; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+        <span><i class="fa-solid fa-user"></i> Punit Sirse</span>
+        <span>&bull;</span>
+        <span>Jul 22, 2025</span>
+        <span>&bull;</span>
+        <span>5 min read</span>
+      </div>
+      
+      <h1 style="font-size: 2.3rem; color: #FFF; margin-bottom: 2rem; line-height: 1.2;">
+        The Myth of Low ACOS: Why a Higher Advertising Cost Can Still Be Profitable
+      </h1>
+      
+      <div class="article-body">
+        <p>
+          In the world of Amazon PPC (Pay-Per-Click) advertising, <strong>ACOS (Advertising Cost of Sale)</strong> is often treated as the ultimate measure of success. Ask any average Amazon seller, and they’ll tell you their primary goal is to drive ACOS as low as possible.
+        </p>
+        <p>
+          But here is a counter-intuitive reality: <strong>an obsession with a low ACOS can actually stall your e-commerce growth, suppress your organic search rankings, and lower your net profits.</strong>
+        </p>
+        
+        <h2>The Equation: Why ACOS Doesn't Show the Big Picture</h2>
+        <p>
+          ACOS is calculated by dividing your ad spend by your ad sales:
+          <br>
+          <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block; margin: 0.5rem 0; color: var(--accent);">ACOS = Ad Spend / Ad Sales</code>
+        </p>
+        <p>
+          While ACOS is perfect for measuring the direct efficiency of a single ad campaign, it ignores the crucial relationship between paid advertising and organic marketplace performance. If you cut ad spend to lower your ACOS, you immediately lower your sales velocity. On marketplaces like Amazon, this reduction in velocity directly signals algorithms to drop your organic search rankings, leading to an overall drop in organic sales.
+        </p>
+
+        <h2>Enter TACoS: The True E-Commerce Metric</h2>
+        <p>
+          Instead of focusing solely on ACOS, premium agencies track <strong>TACoS (Total Advertising Cost of Sale)</strong>:
+          <br>
+          <code style="background: rgba(0,0,0,0.3); padding: 0.3rem 0.6rem; border-radius: 4px; display: inline-block; margin: 0.5rem 0; color: var(--success);">TACoS = Ad Spend / Total Sales (Ad + Organic)</code>
+        </p>
+        <p>
+          Let's analyze two different scenarios to see why this distinction matters:
+        </p>
+        <ul>
+          <li><strong>Scenario A:</strong> You run highly conservative campaigns. You spend ₹50,000 to generate ₹2,00,000 in ad sales. Your ACOS is an impressive 25%. However, because your sales velocity is low, you only generate ₹1,00,000 in organic sales. Your total sales are ₹3,00,000, making your TACoS 16.6%.</li>
+          <li><strong>Scenario B:</strong> You run aggressive campaigns on high-volume discovery keywords. You spend ₹1,50,000 to generate ₹3,75,000 in ad sales, resulting in a higher ACOS of 40%. But because this massive volume spikes your sales velocity, your organic rankings soar, generating ₹6,25,000 in organic sales! Your total sales are now ₹10,00,000, bringing your TACoS down to a highly profitable 15%.</li>
+        </ul>
+        <p>
+          Even though Scenario B had a significantly higher ACOS (40% vs 25%), it delivered <strong>over three times the total revenue</strong> and achieved a lower, healthier TACoS (15% vs 16.6%).
+        </p>
+
+        <h2>Strategic Guidelines for E-Commerce Sellers</h2>
+        <p>
+          To move beyond the low-ACOS trap, brands should structure their advertising campaigns into three distinct strategic layers:
+        </p>
+        <ul>
+          <li><strong>Product Launch Phase:</strong> Expect and accept a high ACOS (often 80%-100%+). Your primary objective here is not immediate profits—it is feeding keyword indexing history and ranking data into the catalog algorithms.</li>
+          <li><strong>Scale & Ranking Phase:</strong> Target high-intent, high-volume search terms. Maintaining a moderate ACOS here is acceptable, as long as it continuously pushes up your organic ranking and lowers your overall TACoS.</li>
+          <li><strong>Profitability & Defense:</strong> Target branded searches and product-page placements. Here, you should maintain a highly efficient, low ACOS to defend your market share and lock in profits.</li>
+        </ul>
+        <p>
+          Stop treating advertising as a siloed cost center. Start viewing it as a powerful lever to drive organic sales velocity, and let your TACoS guide your brand to sustainable, long-term profitability.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article 2 Modal Reader -->
+  <div id="a10-blueprint" class="blog-modal" onclick="closeArticle(event, 'a10-blueprint')">
+    <div class="blog-modal-content">
+      <button class="blog-modal-close" onclick="closeModalDirect('a10-blueprint')">&times;</button>
+      
+      <div style="display: flex; gap: 1rem; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+        <span><i class="fa-solid fa-user"></i> Punit Sirse</span>
+        <span>&bull;</span>
+        <span>Mar 30, 2025</span>
+        <span>&bull;</span>
+        <span>4 min read</span>
+      </div>
+      
+      <h1 style="font-size: 2.3rem; color: #FFF; margin-bottom: 2rem; line-height: 1.2;">
+        Mastering Amazon’s A10 Algorithm: A Seller’s Blueprint for SEO Optimization in 2025
+      </h1>
+      
+      <div class="article-body">
+        <p>
+          Amazon's search engine is the gateway to e-commerce success. For years, the <strong>A9 algorithm</strong> dictated search rankings, heavily weighting direct PPC advertising sales. However, the rollout of the <strong>A10 algorithm</strong> has fundamentally changed the rules of e-commerce SEO.
+        </p>
+        <p>
+          A10 places far greater emphasis on customer search behavior, authentic organic velocity, and off-site traffic, while slightly reducing the relative weight of paid PPC sales. Let's analyze how to optimize your brand for this shift.
+        </p>
+
+        <h2>The Major Weights of Amazon A10</h2>
+        <p>
+          To rank on page one under the A10 algorithm, sellers must align their strategies with these key ranking factors:
+        </p>
+        <ul>
+          <li><strong>Off-Site Traffic:</strong> This is one of the single most powerful organic ranking multipliers under A10. Directing clean, external traffic (from Meta ads, Google Search, TikTok, or email newsletters) to an Amazon listing provides a massive organic ranking boost.</li>
+          <li><strong>Organic Sales Velocity:</strong> Organic sales (clicks that occur without an "Ad" sponsor tag) hold significantly more weight than PPC-driven sales in the A10 indexing model.</li>
+          <li><strong>Click-Through Rate (CTR) & Conversion Rate (CVR):</strong> The algorithm closely monitors user interactions. High-quality main images and competitive pricing that maximize organic CTR and conversions will rapidly push your product up the rankings.</li>
+          <li><strong>Customer Feedback & Account Health:</strong> High defect rates, slow fulfillment, or poor reviews will immediately suppress your catalog visibility, regardless of how much you spend on advertising.</li>
+        </ul>
+
+        <h2>Your SEO Blueprint for 2025</h2>
+        <p>
+          To thrive in this new landscape, brands should implement a modern, multi-dimensional search optimization strategy:
+        </p>
+        <h2>1. Optimize for Intent-Match Copy</h2>
+        <p>
+          A10's Natural Language Processing is highly advanced. Avoid keyword-stuffing. Instead, weave high-converting search queries naturally into your title, bullet points, and description, focusing on the core benefits that resolve customer pain points.
+        </p>
+
+        <h2>2. Build a Diversified Off-Site Traffic Funnel</h2>
+        <p>
+          Don't rely solely on Amazon PPC. Set up external ad campaigns on Meta and Google Search that link directly to your Amazon storefront or product listing. Not only does this drive profitable sales, but it also triggers the A10 algorithm's off-site ranking bonus, lifting your organic rankings across the board.
+        </p>
+
+        <h2>3. Maximize Visual Conversions</h2>
+        <p>
+          Your main image is the single most important factor driving click-through rates. Invest in high-fidelity, professional product photography and clear, informative A+ Content. High conversions build the organic sales velocity that keeps your product anchored on page one.
+        </p>
+        <p>
+          Mastering Amazon SEO is no longer about simply outspending your competitors on PPC. By aligning your strategy with the A10 algorithm's focus on authentic organic sales, off-site traffic, and stellar customer experiences, you can secure durable, highly profitable rankings that last.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-logo-desc">
+          <a href="index.html" class="logo" style="margin-bottom: 0.5rem;">
+            Cliqby
+          </a>
+          <p class="footer-desc">
+            Cliqby (previously Lumen Ads) is a premium digital e-commerce growth agency scaling marketplace sales through cutting-edge data science, PPC, and organic strategies.
+          </p>
+          <div class="footer-contact-info" style="margin-top: 0.5rem;">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 1169266141</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>info@cliqby.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Pune, India ❤️</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Agency</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="index.html">Home</a></li>
+            <li class="footer-link-item"><a href="about.html">About Us</a></li>
+            <li class="footer-link-item"><a href="services.html">Our Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Insights</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="blog.html">Agency Blog</a></li>
+            <li class="footer-link-item"><a href="index.html#audit">Free Audit</a></li>
+            <li class="footer-link-item"><a href="consultation.html">1-on-1 Consultation</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Business Hours</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 0.8rem; color: var(--text-primary);">24×7 Operations</p>
+          <p style="font-size: 0.85rem; line-height: 1.4; color: var(--text-muted);">
+            Our strategies never sleep. With globally active experts and algorithmic monitoring, we scale and optimize continuously.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Cliqby Commerce. All rights reserved.</p>
+        <p><a href="privacy.html" style="color: var(--text-muted); hover: color: var(--primary);">Privacy Policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function openArticle(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeArticle(event, id) {
+      if (event.target.classList.contains('blog-modal')) {
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = 'initial';
+      }
+    }
+    
+    function closeModalDirect(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = 'initial';
+    }
+  </script>
+  <!-- Floating Sticky CTA for High Conversion -->
+  <a href="consultation.html" class="floating-cta" aria-label="Book a free consultation">
+    <i class="fa-solid fa-calendar-days"></i> Free Consultation
+    <span class="floating-cta-pulse"></span>
+  </a>
+</body>
+</html>
